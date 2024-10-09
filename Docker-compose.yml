@@ -12,7 +12,7 @@ services:
     hostname: mysqlDB
 
   webserver:
-    image: apache:latest
+    image: httpd:latest
     container_name: webserver
     volumes:
       - ./admin_area:/var/www/html/admin_area
