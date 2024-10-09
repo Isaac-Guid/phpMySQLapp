@@ -21,7 +21,7 @@ services:
       - ./siteImages:/var/www/html/siteImages
       - ./index.php:/var/www/html/index.php
     environment:
-      MYSQL_HOST: 134.209.175.249
+      MYSQL_HOST: localhost
     ports:
       - "80:80"
     networks:
