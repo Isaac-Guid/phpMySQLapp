@@ -3,13 +3,13 @@ services:
   mysqlDB:
     image: mysql:5.7
     container_name: mysqlDB
-    environment:
-      MYSQL_ROOT_PASSWORD: changeme
     volumes:
       - ./mySqlDB:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
     networks:
-      app-network:
-        ipv4_address: 172.16.238.10
+      - app-network
+    hostname: mysqlDB
 
   webserver:
     image: apache:latest
@@ -18,18 +18,16 @@ services:
       - ./admin_area:/var/www/html/admin_area
       - ./books:/var/www/html/books
       - ./movies:/var/www/html/movies
-      - ./mySqlDB:/var/www/html/mySqlDB
       - ./siteImages:/var/www/html/siteImages
       - ./index.php:/var/www/html/index.php
+    environment:
+      MYSQL_HOST: 134.209.175.249
     ports:
       - "80:80"
     networks:
-      app-network:
-        ipv4_address: 172.16.238.11
+      - app-network
+    hostname: webserver
 
 networks:
   app-network:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.16.238.0/24
