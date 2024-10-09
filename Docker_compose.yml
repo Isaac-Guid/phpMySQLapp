@@ -1,0 +1,7 @@
+Services
+  MySqlDB
+    image: mySql
+    container_name: MySqlDB
+    values: ./MySqlDB:/mySql-init.db:ro
+    Hostname: MySqlDB
+    Environment: Root_Password:ChangeMe
