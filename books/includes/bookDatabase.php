@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "db2";
 $username = "root";
 $password = "admin";
 $dbname = "bookstore";
