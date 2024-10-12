@@ -3,8 +3,7 @@
 -- Host: localhost    Database: bookstore
 -- ------------------------------------------------------
 -- Server version	5.6.35-log
-CREATE DATABASE bookstore;
-USE bookstore;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
